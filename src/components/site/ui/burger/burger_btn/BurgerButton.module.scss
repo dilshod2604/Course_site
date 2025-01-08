@@ -1,0 +1,47 @@
+.BurgerButton {
+  display: none;
+  width: 40px;
+  height: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+  span {
+    position: absolute;
+    width: 35px;
+    height: 3px;
+    border-radius: 3px;
+    background: #000;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  }
+
+  span:nth-child(1) {
+    transform: translateY(-10px);
+  }
+
+  span:nth-child(3) {
+    transform: translateY(10px);
+  }
+
+  &.active {
+    justify-content: center;
+  }
+
+  &.active span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  &.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.active span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+@media (max-width: 820px) {
+  .BurgerButton {
+    display: flex;
+  }
+}
