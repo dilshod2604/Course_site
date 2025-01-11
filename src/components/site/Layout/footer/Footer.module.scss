@@ -1,10 +1,10 @@
 .Footer {
-  padding: 178px 0 100px 0;
+  padding: clamp(100px, 15vw, 150px) 0 clamp(50px, 8vw, 100px) 0;
   background: rgb(245, 249, 252);
   .footer_content {
     display: flex;
     align-items: start;
-    gap: clamp(100px, 10vw, 230px);
+    gap: clamp(50px, 10vw, 230px);
     justify-content: space-between;
     .block_1 {
       display: flex;
