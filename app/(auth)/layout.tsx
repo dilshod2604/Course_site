@@ -1,9 +1,9 @@
-
-import LayoutSite from "@/src/components/site/Layout/layout_site/LayoutSite";
+"use client";
+import AuthLayout from "@/src/components/auth/Layout/AuthLayout";
 import React, { ReactNode } from "react";
 
 const layout = ({ children }: { children: ReactNode }) => {
-  return <LayoutSite>{children}</LayoutSite>;
+  return <AuthLayout>{children}</AuthLayout>;
 };
 
 export default layout;

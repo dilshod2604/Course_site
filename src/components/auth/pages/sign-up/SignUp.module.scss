@@ -1,1 +1,214 @@
+.SignUp {
+  margin-bottom: 100px;
+  border: 1px solid black;
+  .sign_up_header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100px;
+    border-bottom: 0.84px solid rgba(0, 0, 0, 0.5);
+    .header_content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .header_link {
+        color: rgb(35, 166, 240);
+        font-family: Rubik;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+      }
+    }
+  }
+  .content {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-inline: 20px;
+    .sign_up_form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      width: 100%;
+      align-items: center;
+      gap: 25px;
+      gap .sign_up_title {
+        color: rgb(0, 0, 0);
+        font-family: Rubik;
+        font-size: 40.18px;
+        font-weight: 500;
+        line-height: 48px;
+        letter-spacing: 0%;
+        text-align: left;
+      }
+      .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        .form_group {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 10px;
+          position: relative;
+          label {
+            color: rgb(0, 0, 0);
+            font-family: Rubik;
+            font-size: 16.74px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0%;
+            text-align: left;
+          }
+          .form_inputs {
+            width: 100%;
+            height: 58px;
+            padding-inline-start: 16px;
+            box-sizing: border-box;
+            border: 0.84px solid rgba(0, 0, 0, 0.4);
+            border-radius: 6.7px;
+            outline: none;
+            &::placeholder {
+              color: rgba(0, 0, 0, 0.5);
+              font-family: Rubik;
+              font-size: 16.74px;
+              font-weight: 400;
+              line-height: 20px;
+              letter-spacing: 0%;
+              text-align: left;
+            }
+          }
+          .password_icon {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+            bottom: 20px;
+          }
+        }
+        .form_checkbox {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 10px;
+          .checkbox {
+            padding: 0;
+            width: 21px;
+            height: 21px;
+          }
+          p {
+            width: 100%;
+            color: rgb(0, 0, 0);
+            font-family: Rubik;
+            font-size: 13.39px;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: 0%;
+            text-align: left;
+          }
+        }
+        .sign_up_button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          border: none;
+          width: 100%;
+          height: 52px;
+          border-radius: 12px;
+          background: rgb(35, 166, 240);
+          color: rgb(255, 255, 255);
+          font-family: Rubik;
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 28px;
+          letter-spacing: 0%;
+          text-align: left;
+          cursor: pointer;
+          &:disabled {
+            background: rgb(130, 205, 249);
+            cursor: no-drop;
+          }
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
 
+          .sign_up_button_icon {
+            color: white;
+            font-size: 24px;
+            animation: spin 1s linear infinite;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #ffcc00; // Change color on hover
+            }
+          }
+        }
+      }
+
+      .dividers_box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .lines {
+          width: 100%;
+          height: 0.4px;
+          background: rgba(0, 0, 0, 0.5);
+        }
+        .divider_text {
+          color: rgba(0, 0, 0, 0.5);
+          font-family: Rubik;
+          font-size: 20.09px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0%;
+        }
+      }
+      .additional_auth {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        .auth_buttons {
+          border: none;
+          height: 52px;
+          background-color: transparent;
+          width: 100%;
+          box-sizing: border-box;
+          border-radius: 5.86px;
+          box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          color: rgb(0, 0, 0);
+          font-family: Montserrat;
+          font-size: 20.09px;
+          font-weight: 500;
+          line-height: 25.53px;
+          letter-spacing: 0%;
+          cursor: pointer;
+          &:hover {
+            border: 1px solid rgb(52, 139, 202);
+          }
+          .facebook_icon {
+            color: rgb(52, 139, 202);
+          }
+        }
+      }
+    }
+  }
+}
