@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Rubik, Montserrat } from "next/font/google";
 import "./globals.scss";
+import ReduxProvider from "@/src/providers/ReduxProvider";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rubikSans.variable} ${montserratSans.variable}`}>
-        {children}
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );
