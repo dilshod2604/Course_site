@@ -1,0 +1,73 @@
+.Founders {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .title {
+    text-align: center;
+    font-family: Montserrat;
+    color: #252b42;
+    margin-bottom: 20px;
+    font-size: clamp(25px, 5vw, 35px);
+  }
+
+  .content {
+    width: 100%;
+    display: block;
+
+    .imageWrapper {
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
+
+      .image {
+        width: clamp(200px, 35vw, 430px);
+        height: clamp(200px, 35vw, 430px);
+        border-radius: 100px 0 100px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .text {
+      p {
+        line-height: 1.5;
+        font-size: clamp(15px, 3vw, 22px);
+        width: clamp(500px, 90vw, 1100px);
+        font-family: Montserrat;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .content {
+      flex-direction: column;
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      .imageWrapper {
+        .image {
+          width: 100%;
+          height: auto;
+          border-radius: 70px 0 70px 0;
+        }
+      }
+
+      .text p {
+        line-height: 1.5;
+        font-size: clamp(15px, 1vw, 22px);
+        font-family: Montserrat;
+        text-align: center;
+        width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 16;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+}

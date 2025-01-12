@@ -1,3 +1,66 @@
 .AboutWelcome {
-  margin-top: 100px ;
+  margin: 100px 0;
+  background-color: #fff;
+
+  .welcome_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 20px;
+
+    h1 {
+      position: relative;
+      left: 12%;
+      font-family: Montserrat;
+      font-size: clamp(15px, 2vw, 29px);
+      font-weight: 700;
+      line-height: 1.5;
+      color: #2d2d2d;
+      max-width: 850px;
+      z-index: 99;
+    }
+
+    .welcome_image {
+      width: 50%;
+      height: 100%;
+      background: transparent;
+      margin-right: 100px;
+      display: flex;
+      .image_raketa {
+        z-index: 1;
+        width: clamp(150px, 28vw, 350px);
+        height: auto;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .welcome_content {
+      flex-direction: column; 
+      align-items: center; /* Центрируем элементы */
+      justify-content: flex-start; /* Выравнивание по верхнему краю */
+
+      h1 {
+        position: static; /* Убираем позиционирование */
+        text-align: center; /* Текст по центру */
+        left: 0;
+        font-size: clamp(15px, 4vw, 20px);
+        max-width: 90%; /* Уменьшаем ширину для мобильных */
+      }
+
+      .welcome_image {
+        width: 100%; /* Картинка занимает всю ширину */
+        margin-right: 0; /* Убираем правый отступ */
+        .image_raketa {
+          position: relative; /* Относительное позиционирование для картинки */
+          top: 0;
+          left: 50%;
+          width: 60%;
+          height: auto;
+          transform: translateX(-50%); /* Центрируем картинку */
+        }
+      }
+    }
+  }
 }
