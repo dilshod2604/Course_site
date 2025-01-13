@@ -1,0 +1,14 @@
+<svg width="16.000000" height="14.666656" viewBox="0 0 16 14.6667" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip230_523">
+			<rect id="icon ant-design-area-chart-outlined" rx="0.000000" width="15.000000" height="13.666667" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="icon ant-design-area-chart-outlined" rx="0.000000" width="15.000000" height="13.666667" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip230_523)">
+		<path id="Vector" d="M15.83 13.16L1.5 13.16L1.5 0.16C1.5 0.07 1.42 0 1.33 0L0.16 0C0.07 0 0 0.07 0 0.16L0 14.5C0 14.59 0.07 14.66 0.16 14.66L15.83 14.66C15.92 14.66 16 14.59 16 14.5L16 13.33C16 13.24 15.92 13.16 15.83 13.16ZM3 11.83L14.16 11.83C14.25 11.83 14.33 11.75 14.33 11.66L14.33 2.58C14.33 2.43 14.15 2.36 14.04 2.46L9.66 6.84L7.05 4.26C7.02 4.23 6.98 4.21 6.93 4.21C6.89 4.21 6.85 4.23 6.81 4.26L2.88 8.21C2.86 8.22 2.85 8.24 2.84 8.26C2.83 8.28 2.83 8.3 2.83 8.32L2.83 11.66C2.83 11.75 2.9 11.83 3 11.83Z" fill="#40BB15" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

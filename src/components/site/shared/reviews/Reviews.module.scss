@@ -1,0 +1,153 @@
+.Reviews {
+  margin: 100px 0px;
+  .welcome_content {
+    overflow: hidden;
+    .welcome_content_text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 50px;
+      h2 {
+        color: rgb(11, 19, 42);
+        font-family: Rubik;
+        font-size: clamp(24px, 3vw, 35px);
+        font-weight: clamp(700px, 27vw, 500px);
+        line-height: clamp(30px, 3vw, 50px);
+        letter-spacing: 0%;
+        text-align: center;
+        max-width: 445px;
+      }
+      p {
+        color: rgb(79, 86, 101);
+        font-family: Rubik;
+        font-size: clamp(14px, 1vw, 16px);
+        font-weight: 400;
+        line-height: calmp(18px, 1vw, 30px);
+        letter-spacing: 0%;
+        text-align: center;
+        max-width: 510px;
+      }
+    }
+    .welcome_content_block {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      overflow: hidden;
+      overflow-x: scroll;
+      gap: 30px;
+      .reviews_content {
+        box-sizing: border-box;
+        border: 2px solid rgb(221, 221, 221);
+        border-radius: 10px;
+        background: rgb(255, 255, 255);
+        width: clamp(253px, 28vw, 450px);
+        height: clamp(210px, 14vw, 230px);
+        padding: 20px;
+
+        // border: 1px solid red;
+
+        .reviews_info {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          // border: 1px solid #095dc3;
+          gap: 10px;
+          margin-bottom: 20px;
+          img {
+            width: 31.57px;
+            height: 31.57px;
+          }
+          .reviews_text {
+            // border: 1px solid rgb(1, 2, 7);
+            margin-right: clamp(20px, 4vw, 70px);
+            h3 {
+              color: rgb(11, 19, 42);
+              font-family: Rubik;
+              font-size: clamp(11.37px, 1vw, 16px);
+              font-weight: clamp(500px, 37vw, 600px);
+              line-height: clamp(18.94px, 1vw, 30px);
+              letter-spacing: 0%;
+              text-align: left;
+            }
+            .country {
+              color: rgb(79, 86, 101);
+              font-family: Rubik;
+              font-size: clamp(8.84px, 0.8vw, 13px);
+              font-weight: 400;
+              line-height: clamp(18.94px, 1vw, 30px);
+              letter-spacing: 0%;
+              text-align: left;
+              // border: 1px solid rgb(57, 190, 16);
+            }
+          }
+          p {
+            color: rgb(11, 19, 42);
+            font-family: Rubik;
+            font-size: clamp(10.1px, 1vw, 16px);
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0%;
+            text-align: left;
+            margin-left: 10px;
+            // border: 1px solid rgb(22, 31, 208);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+              color: rgb(254, 162, 80);
+              margin-left: 5px;
+            }
+          }
+        }
+        .review_text {
+          height: clamp(63.14px, 7vw, 120px);
+          width: clamp(214.69px, 22vw, 340px);
+        }
+      }
+      margin-bottom: 50px;
+    }
+    .buttons_arrow {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      .blocks_arrows {
+        display: flex;
+        // border: 1px solid #000;
+        width: 100px;
+        margin-right: clamp(120px, 48.75vw, 870px);
+        gap: 20px;
+        .blocks_arrow {
+          width: clamp(9.47px, 0.93vw, 15px);
+          height: clamp(9.47px, 0.93vw, 15px);
+          cursor: pointer;
+          background: rgb(221, 224, 228);
+          border-radius: 50%;
+        }
+      }
+      .buttons {
+        background: white;
+        display: flex;
+        margin-left: clamp(2px, 1vw, 90px);
+        gap: clamp(12px, 1.8vw, 30px);
+        .arrow {
+          box-sizing: border-box;
+          border: 2px solid rgb(35, 166, 240);
+          box-shadow: 0px 14px 44px 0px rgba(14, 20, 34, 0.08);
+          border-radius: 50%;
+          background: white;
+          width: clamp(37.89px, 3vw, 60px);
+          height: clamp(37.89px, 3vw, 60px);
+          cursor: pointer;
+          svg {
+            width: 20px;
+            height: 17.5px;
+            color: rgb(35, 166, 240);
+          }
+        }
+      }
+    }
+  }
+}

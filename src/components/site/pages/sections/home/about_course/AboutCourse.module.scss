@@ -1,0 +1,180 @@
+.AboutCouse {
+  margin: 100px 0;
+  .welcome_content {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    .welcome_content_text {
+      max-width: 800px;
+      height: auto;
+      .text_about_1 {
+        margin-bottom: clamp(25px, 4vw, 80px);
+        h1 {
+          color: rgb(11, 19, 42);
+          font-family: Rubik;
+          font-size: clamp(24px, 3vw, 50px);
+          font-weight: 700;
+          line-height: 70px;
+          letter-spacing: 0%;
+          text-align: left;
+          margin-bottom: 12px;
+        }
+        p {
+          color: rgb(79, 86, 101);
+          font-family: Rubik;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 30px;
+          letter-spacing: 0%;
+          text-align: left;
+        }
+      }
+      .text_about_2 {
+        margin-bottom: clamp(25px, 4vw, 80px);
+        h1 {
+          color: rgb(44, 87, 215);
+          font-family: Rubik;
+          font-size: 96px;
+          font-weight: 400;
+          line-height: 70px;
+          letter-spacing: 0%;
+          text-align: left;
+          margin-bottom: 25px;
+        }
+        p {
+          color: rgb(79, 86, 101);
+          font-family: Rubik;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 30px;
+          letter-spacing: 0%;
+          text-align: left;
+        }
+      }
+    }
+    .welcome_content_icons {
+      background: rgb(245, 249, 252);
+      padding: 120px 131px 0px 70px;
+      .welcome_content_icon_1 {
+        display: flex;
+        align-items: start;
+        justify-content: flex-start;
+        margin-bottom: 116px;
+        gap: 30px;
+        .welcome_content_icon_text_1 {
+          h4 {
+            color: rgb(37, 43, 66);
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0.1px;
+            text-align: left;
+            // margin-bottom: 13px;
+          }
+          span {
+            color: rgb(115, 115, 115);
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0.2px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .AboutCouse {
+    margin-bottom: 67px;
+    gap: 30px;
+    .welcome_content {
+      display: flex;
+      flex-direction: column;
+      .welcome_content_text {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        .text_about_1 {
+          h1 {
+            color: rgb(11, 19, 42);
+            font-family: Rubik;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 70px;
+            letter-spacing: 0%;
+            text-align: center;
+          }
+          p {
+            color: rgb(79, 86, 101);
+            font-family: Rubik;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: 0%;
+            text-align: center;
+          }
+        }
+        .text_about_2 {
+          h1 {
+            color: rgb(35, 166, 240);
+            font-family: Rubik;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 70px;
+            letter-spacing: 0%;
+            text-align: center;
+          }
+          p {
+            color: rgb(79, 86, 101);
+            font-family: Rubik;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: 0%;
+            text-align: center;
+          }
+        }
+      }
+      .welcome_content_icons {
+        background: rgb(245, 249, 252);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: start;
+        justify-content: start;
+        padding: 76.86px 51.25px 0px 20px;
+        .welcome_content_icon_1 {
+          display: flex;
+          align-items: start;
+          justify-content: flex-start;
+          margin-bottom: 84px;
+          .welcome_content_icon_text_1 {
+            h4 {
+              color: rgb(37, 43, 66);
+              font-family: Montserrat;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 17.57px;
+              letter-spacing: 0.07px;
+              text-align: left;
+            }
+            span {
+              color: rgb(115, 115, 115);
+              font-family: Montserrat;
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 14.64px;
+              letter-spacing: 0.15px;
+              text-align: left;
+              width: 255.53px;
+              height: 44px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
