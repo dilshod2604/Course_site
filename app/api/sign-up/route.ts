@@ -1,4 +1,4 @@
-import { client } from "@/lib/prisma";
+import { client} from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 
@@ -40,5 +40,7 @@ export const POST = async (req: Request) => {
       { message: "Internal server error", error },
       { status: 500 }
     );
+    console.log(error);
+    
   }
 };
