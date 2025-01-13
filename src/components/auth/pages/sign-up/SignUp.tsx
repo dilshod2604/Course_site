@@ -62,7 +62,7 @@ const SignUp = () => {
         setTimeout(() => {
           router.push("/sign-in ");
         }, 4000);
-      } else if (res.error) {
+      } else if (res.error?.status === 401) {
         toast.warning("Этот пользователь уже существует", {
           position: "top-right",
           autoClose: 5000,
