@@ -37,12 +37,21 @@ const Reviews = () => {
               </>
             ))}
           </div>
-          <button className={scss.arrow}>
-            <FaArrowLeft />
-          </button>
-          <button className={scss.arrow}>
-            <FaArrowRight />
-          </button>
+          <div className={scss.buttons_arrow}>
+            <div className={scss.blocks_arrows}>
+              <div className={scss.blocks_arrow}></div>
+              <div className={scss.blocks_arrow}></div>
+              <div className={scss.blocks_arrow}></div>
+            </div>
+            <div className={scss.buttons}>
+              <button className={scss.arrow}>
+                <FaArrowLeft />
+              </button>
+              <button className={scss.arrow}>
+                <FaArrowRight />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
