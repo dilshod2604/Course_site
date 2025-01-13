@@ -1,0 +1,46 @@
+.JoinUs {
+  padding-top: 50px;
+  .welcome_content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    h1 {
+      font-size: clamp(25px, 5vw, 50px);
+      color: #0b132a;
+      font-family: Rubik;
+    }
+    p {
+      font-family: Rubik;
+      font-weight: 400;
+      font-size: clamp(8px, 2vw, 16px);
+      line-height: 2;
+      color: #4f5665;
+      margin-bottom: 80px;
+    }
+    .join_input {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: clamp(85%, 28vw, 82%);
+      input {
+        width: clamp(200px, 65vw, 800px);
+        height: clamp(25px, 10vw, 70px);
+        padding: clamp(10px, 5vw, 20px);
+        font-family: Montserrat;
+        font-size: clamp(10px, 3vw, 20px);
+      }
+      button {
+        width: clamp(70px, 20vw, 177px);
+        height: clamp(35px, 10vw, 70px);
+        font-family: Montserrat;
+        font-size: clamp(10px, 3vw, 20px);
+        color: white;
+        background: #23a6f0;
+        border: none;
+      }
+    }
+  }
+}
