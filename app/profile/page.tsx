@@ -1,10 +1,10 @@
-import Courses from "@/src/components/site/pages/Courses";
+import ProdfilePage from "@/src/components/site/pages/ProdfilePage";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <Courses />
+      <ProdfilePage />
     </div>
   );
 };

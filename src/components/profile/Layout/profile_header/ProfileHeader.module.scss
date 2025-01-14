@@ -1,0 +1,14 @@
+.ProfileHeader {
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 40px;
+  }
+}
