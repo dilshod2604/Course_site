@@ -7,7 +7,7 @@ const LayoutSite = ({ children }: { children: ReactNode }) => {
     <div className={scss.Layout_site}>
       <Header />
       <main>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

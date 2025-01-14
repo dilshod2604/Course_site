@@ -1,10 +1,10 @@
-import Courses from "@/src/components/site/pages/Courses";
+import CourseId from "@/src/components/site/pages/CourseId";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <Courses />
+      <CourseId />
     </div>
   );
 };
