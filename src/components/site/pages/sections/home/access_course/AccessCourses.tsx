@@ -21,6 +21,8 @@ const AccessCourses = () => {
             {courses.map((el, index) => (
               <div key={index} className={scss.accessCourses_item}>
                 <Image src={el.image} alt="img" width={329} height={300} />
+                <p className={scss.item_lll}>{el.lll}</p>
+        
                 <div className={scss.accessCourses_item_info}>
                   <h3 className={scss.item_title}>{el.title}</h3>
                   <span className={scss.item_description}>

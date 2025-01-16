@@ -19,9 +19,9 @@ const Reviews = () => {
             </p>
           </div>
           <div className={scss.welcome_content_block}>
-            {reviews.map((el) => (
+            {reviews.map((el,idx) => (
               <>
-                <div className={scss.reviews_content}>
+                <div key={idx} className={scss.reviews_content}>
                   <div className={scss.reviews_info}>
                     <Image src={el.image} alt="img" width={50} height={50} />
                     <div className={scss.reviews_text}>
