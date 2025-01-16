@@ -1,11 +1,11 @@
-import { client} from "@/lib/prisma";
+import { client } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 
 export const POST = async (req: Request) => {
   try {
     const data = await req.json();
-    const { email, password, name, isAggree } = data;
+    const { email, password, name, isAgree } = data;
 
     // Проверка, существует ли пользователь
     const isUserExist = await client.user.findUnique({
@@ -30,7 +30,7 @@ export const POST = async (req: Request) => {
         email,
         password: hashedPassword,
         name,
-        isAggree,
+        isAgree,
       },
     });
 
@@ -41,6 +41,5 @@ export const POST = async (req: Request) => {
       { status: 500 }
     );
     console.log(error);
-    
   }
 };

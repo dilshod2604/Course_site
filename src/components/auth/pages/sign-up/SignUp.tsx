@@ -39,7 +39,7 @@ const SignUp = () => {
         email: data.email,
         password: data.password,
         name: data.name,
-        isAggree: data.isAggree,
+        isAgree: data.isAggree,
       });
       if (res.data) {
         reset({
@@ -62,7 +62,7 @@ const SignUp = () => {
         setTimeout(() => {
           router.push("/sign-in ");
         }, 4000);
-      } else if (res.error?.status === 401) {
+      } else if (res.error?.status === 400) {
         toast.warning("Этот пользователь уже существует", {
           position: "top-right",
           autoClose: 5000,

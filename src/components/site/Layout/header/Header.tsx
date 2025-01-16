@@ -10,19 +10,75 @@ import { useBurgerStore } from "@/src/store/useBurgerStore";
 import BurgerMenu from "../../ui/burger/burger_menu/BurgerMenu";
 import Link from "next/link";
 import { useGetMeQuery } from "@/src/redux/api/auth";
-import ProfileButton from "../../ui/profile_button/ProfileButton";
+import { useRouter } from "next/navigation";
+import { Dropdown, MenuProps } from "antd";
+import avatar from "../../../../assets/avatar/avatar.jpg";
+import { RiAdminLine, RiUser6Line } from "react-icons/ri";
+
 const Header = () => {
   const { isOpen } = useBurgerStore();
   const { data } = useGetMeQuery();
+  const router = useRouter();
+
+  //items
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      label: (
+        <Link
+          className="flex items-center gap-x-4"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="  /profile"
+        >
+          <RiUser6Line /> Мой профиль
+        </Link>
+      ),
+    },
+    data?.role === "ADMIN"
+      ? {
+          key: "2",
+          label: (
+            <Link
+              className="flex items-center gap-x-4"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="/admin"
+            >
+              <RiAdminLine /> Админ
+            </Link>
+          ),
+        }
+      : null,
+  ].filter(Boolean);
+
   return (
     <header className={scss.Header}>
       <div className="container">
         <div className={scss.header_content}>
-          <Image src={logo} alt="logo" width={50} height={50} />
+          <Image
+            src={logo}
+            alt="logo"
+            width={50}
+            height={50}
+            onClick={() => router.push("/")}
+          />
           <Navigation />
           <div className={scss.header_login}>
             {data?.email ? (
-              <ProfileButton />
+              <Dropdown
+                menu={{ items }}
+                placement="bottom"
+                arrow={{ pointAtCenter: true }}
+              >
+                <Image
+                  src={avatar}
+                  alt="avatar"
+                  width={50}
+                  height={50}
+                  className={scss.dropdown_avatar}
+                />
+              </Dropdown>
             ) : (
               <>
                 <Link href="/sign-in" className={scss.sign_in}>

@@ -1,0 +1,15 @@
+.AdminLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  .admin_main_box {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    main {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+  }
+}
