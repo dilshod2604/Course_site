@@ -8,11 +8,69 @@ datasource db {
 }
 
 model User {
+  id              String            @id @default(uuid())
+  email           String            @unique
+  password        String
+  avatar          String?
+  name            String?
+  isAgree         Boolean?
+  role            UserRole          @default(USER)
+  createdCourses  Courses[]         @relation("CreatedCourses")
+  learningCourses UserCourses[]
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  Favorite        FavoriteCourses[]
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}
+
+model Courses {
+  id          String            @id @default(uuid())
+  name        String
+  description String
+  coverImage  String?
+  price       String
+  isFree      Boolean
+  lessons     Lessons[]
+  createdBy   User              @relation("CreatedCourses", fields: [creatorId], references: [id])
+  creatorId   String
+  users       UserCourses[]
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  Favorite    FavoriteCourses[]
+}
+
+model UserCourses {
   id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  name      String?
-  isAggree  Boolean?
+  userId    String
+  courseId  String
+  progress  Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  User      User     @relation(fields: [userId], references: [id])
+  Course    Courses  @relation(fields: [courseId], references: [id])
+}
+
+model Lessons {
+  id         String   @id @default(uuid())
+  name       String
+  duration   Int
+  coverImage String
+  video      String
+  Courses    Courses? @relation(fields: [coursesId], references: [id])
+  coursesId  String?
+}
+
+model FavoriteCourses {
+  id         String   @id @default(uuid())
+  isFavorite Boolean
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  User       User     @relation(fields: [userId], references: [id])
+  userId     String
+  Courses    Courses  @relation(fields: [coursesId], references: [id])
+  coursesId  String
 }

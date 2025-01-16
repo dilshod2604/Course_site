@@ -1,0 +1,83 @@
+.MyProfile {
+  .content {
+    .profile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border: 1px solid gray;
+      overflow: hidden;
+      border-radius: 10px;
+      .profile_banner {
+        width: 100%;
+        background: rgb(0, 225, 255);
+        height: 180px;
+      }
+      .profile_info_box {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        padding: 20px;
+        .profile_info {
+          display: flex;
+          gap: 32px;
+          align-items: start;
+
+          .profile_avatar {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            top: -50px;
+            border: 1px solid gray;
+            .avatar_input {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+              opacity: 0;
+              cursor: pointer;
+            }
+          }
+          .profile_name {
+            display: flex;
+            align-items: center;
+            .name_input {
+              height: 30px;
+              border-radius: 5px;
+              padding-inline: 5px;
+              border: 1px solid gray;
+              outline: none;
+            }
+            .name {
+              color: rgb(37, 43, 66);
+              font-family: Poppins;
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 30px;
+              letter-spacing: 0px;
+              text-align: left;
+            }
+          }
+        }
+      }
+      .edit_button {
+        width: 159px;
+        height: 46px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: left;
+        border-radius: 6px;
+        background: rgb(35, 166, 240);
+      }
+    }
+  }
+}
