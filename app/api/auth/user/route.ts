@@ -34,3 +34,35 @@ export const GET = async () => {
     );
   }
 };
+
+//// Profile
+export const PATCH = async (req: Request) => {
+  try {
+    const { name, avatar } = await req.json();
+
+    const userCookie = await (await cookies()).get("user_id");
+    if (!userCookie?.value) {
+      return NextResponse.json(
+        { error: "ID пользователя не найден" },
+        { status: 401 }
+      );
+    }
+    const userUpdate = await client.user.update({
+      where: {
+        id: userCookie?.value,
+      },
+      data: {
+        name,
+        avatar: avatar,
+      },
+    });
+
+    return NextResponse.json(userUpdate, { status: 200 });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { message: "Internal Server Error" },
+      { status: 500 }
+    );
+  }
+};

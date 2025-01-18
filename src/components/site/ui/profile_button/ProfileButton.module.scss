@@ -4,4 +4,11 @@
     height: 50px;
     border-radius: 50%;
   }
+  .profileMenu {
+    border: 1px solid black;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
 }

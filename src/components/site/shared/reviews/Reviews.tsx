@@ -19,22 +19,21 @@ const Reviews = () => {
             </p>
           </div>
           <div className={scss.welcome_content_block}>
-            {reviews.map((el,idx) => (
-              <>
-                <div key={idx} className={scss.reviews_content}>
-                  <div className={scss.reviews_info}>
-                    <Image src={el.image} alt="img" width={50} height={50} />
-                    <div className={scss.reviews_text}>
-                      <h3>{el.name}</h3>
-                      <span className={scss.country}>{el.country}</span>
-                    </div>
-                    <p>
-                      {el.reiting} <RiStarSFill />
-                    </p>
+
+            {reviews.map((el, index) => (
+              <div key={index} className={scss.reviews_content}>
+                <div className={scss.reviews_info}>
+                  <Image src={el.image} alt="img" width={50} height={50} />
+                  <div className={scss.reviews_text}>
+                    <h3>{el.name}</h3>
+                    <span className={scss.country}>{el.country}</span>
                   </div>
-                  <div className={scss.review_text}>{el.text}</div>
+                  <p>
+                    {el.reiting} <RiStarSFill />
+                  </p>
                 </div>
-              </>
+                <div className={scss.review_text}>{el.text}</div>
+              </div>
             ))}
           </div>
           <div className={scss.buttons_arrow}>
