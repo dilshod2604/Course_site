@@ -19,6 +19,7 @@ const Reviews = () => {
             </p>
           </div>
           <div className={scss.welcome_content_block}>
+
             {reviews.map((el, index) => (
               <div key={index} className={scss.reviews_content}>
                 <div className={scss.reviews_info}>
