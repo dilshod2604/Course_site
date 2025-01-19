@@ -1,17 +1,20 @@
-/*
-  Warnings:
-
-  - You are about to drop the column `isAggree` on the `User` table. All the data in the column will be lost.
-
-*/
 -- CreateEnum
 CREATE TYPE "UserRole" AS ENUM ('ADMIN', 'USER');
 
--- AlterTable
-ALTER TABLE "User" DROP COLUMN "isAggree",
-ADD COLUMN     "avatar" TEXT,
-ADD COLUMN     "isAgree" BOOLEAN,
-ADD COLUMN     "role" "UserRole" NOT NULL DEFAULT 'USER';
+-- CreateTable
+CREATE TABLE "User" (
+    "id" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "avatar" TEXT,
+    "name" TEXT,
+    "isAgree" BOOLEAN,
+    "role" "UserRole" NOT NULL DEFAULT 'USER',
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
 
 -- CreateTable
 CREATE TABLE "Courses" (
@@ -63,6 +66,9 @@ CREATE TABLE "FavoriteCourses" (
 
     CONSTRAINT "FavoriteCourses_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- AddForeignKey
 ALTER TABLE "Courses" ADD CONSTRAINT "Courses_creatorId_fkey" FOREIGN KEY ("creatorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
