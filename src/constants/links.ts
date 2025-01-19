@@ -61,3 +61,35 @@ export const side_bar_links: ISideBar[] = [
     outlineIcon: IoSettingsOutline,
   },
 ];
+export const admin_side_bar_links: ISideBar[] = [
+  {
+    name: "Профиль",
+    href: "/admin",
+    fillIcon: FaUser,
+    outlineIcon: FaRegUser,
+  },
+  {
+    name: "Чат",
+    href: "/profile/chat",
+    fillIcon: PiChatsCircleFill,
+    outlineIcon: PiChatsCircleLight,
+  },
+  {
+    name: "Курсы",
+    href: "/profile/course",
+    fillIcon: MdEmail,
+    outlineIcon: MdOutlineMailOutline,
+  },
+  {
+    name: "Оценить",
+    href: "/profile/rate",
+    fillIcon: FaStar,
+    outlineIcon: FaRegStar,
+  },
+  {
+    name: "Настройки",
+    href: "/profile/settings",
+    fillIcon: IoSettings,
+    outlineIcon: IoSettingsOutline,
+  },
+];
