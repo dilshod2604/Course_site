@@ -18,8 +18,11 @@ const AccessCourses = () => {
             Постепенное накоплениеинформация
           </span>
           <div className={scss.accessCourses_block}>
-            {courses.map((el, index) => (
-              <div key={index} className={scss.accessCourses_item}>
+            {courses.map((el, videoIndex) => (
+              <div
+                key={`${el.id}-${videoIndex}`}
+                className={scss.accessCourses_item}
+              >
                 <Image src={el.image} alt="img" width={329} height={300} />
                 <p className={scss.item_lll}>{el.lll}</p>
         
