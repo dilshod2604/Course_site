@@ -35,7 +35,6 @@ export const reviews: IReviews[] = [
   },
   {
     name: "Viezh Robert",
- master
     image: image1,
     country: "Warsaw, Poland",
     text: "«Вау… Я очень рад использовать этот VPN, он оказался больше, чем мои ожидания, и до сих пор не было никаких проблем. (Название) всегда лучший».",

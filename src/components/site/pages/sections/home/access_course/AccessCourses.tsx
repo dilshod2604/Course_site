@@ -6,6 +6,7 @@ import time from "../../../../../../assets/access_course/time.svg";
 import lesson from "../../../../../../assets/access_course/lesson.svg";
 import progress from "../../../../../../assets/access_course/progress.svg";
 import { MdArrowForwardIos } from "react-icons/md";
+import Link from "next/link";
 
 const AccessCourses = () => {
   return (
@@ -25,7 +26,7 @@ const AccessCourses = () => {
               >
                 <Image src={el.image} alt="img" width={329} height={300} />
                 <p className={scss.item_lll}>{el.lll}</p>
-        
+
                 <div className={scss.accessCourses_item_info}>
                   <h3 className={scss.item_title}>{el.title}</h3>
                   <span className={scss.item_description}>
@@ -63,10 +64,12 @@ const AccessCourses = () => {
                       Прогресс
                     </span>
                   </div>
-                  <button>
-                    Узнать больше
-                    <MdArrowForwardIos />
-                  </button>
+                  <Link href={`/course/da`}>
+                    <button>
+                      Узнать больше
+                      <MdArrowForwardIos />
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -78,3 +81,5 @@ const AccessCourses = () => {
 };
 
 export default AccessCourses;
+
+// href={`/course/${el.id}`}

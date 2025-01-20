@@ -48,8 +48,7 @@ const Reviews = () => {
               использовать. Постепенное накоплениеинформация
             </p>
           </div>
-          <div className={scss.welcome_content_block}>
-
+          <div className={scss.welcome_content_block} ref={scrollContainerRef}>
             {reviews.map((el, index) => (
               <div key={index} className={scss.reviews_content}>
                 <div className={scss.reviews_info}>

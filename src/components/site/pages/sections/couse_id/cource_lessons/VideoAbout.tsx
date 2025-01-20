@@ -11,6 +11,7 @@ import { message } from "@/src/constants/message";
 import Image from "next/image";
 import { BiShare } from "react-icons/bi";
 import { GoSmiley } from "react-icons/go";
+import Link from "next/link";
 
 const VideoAbout = () => {
   const { id } = useParams();
@@ -40,9 +41,12 @@ const VideoAbout = () => {
             {lesson ? (
               <div key={lesson.id} className={scss.video}>
                 <div className={scss.buttons}>
-                  <button>
-                    <MdOutlineKeyboardArrowLeft />
-                  </button>
+                  <Link href={`/course/da`}>
+                    <button>
+                      <MdOutlineKeyboardArrowLeft />
+                    </button>
+                  </Link>
+
                   <h1>{lesson.title}</h1>
                 </div>
                 <div className={scss.videoWrapper}>
