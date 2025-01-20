@@ -15,15 +15,16 @@
     border-bottom-left-radius: 5px;
     padding: 20px 40px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
+
     .burger_nav {
       display: flex;
       flex-direction: column;
       align-items: start;
       gap: 10px;
       a {
-        // border: 1px solid white;
         width: 100%;
         border-radius: 5px;
         color: white;
@@ -33,6 +34,30 @@
         line-height: 24px;
         letter-spacing: 0.2px;
         text-align: center;
+        padding-inline: 20px;
+        &:hover {
+          color: rgb(35, 166, 240);
+          background: white;
+        }
+      }
+    }
+
+    .profile_actions {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+      a {
+        width: 100%;
+        border-radius: 5px;
+        color: white;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        text-align: center;
+        padding-inline: 20px;
         &:hover {
           color: rgb(35, 166, 240);
           background: white;

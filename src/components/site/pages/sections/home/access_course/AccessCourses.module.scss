@@ -30,15 +30,31 @@
       display: flex;
       gap: 40px;
       .accessCourses_item {
-        width: 100%;
+        position: relative;
+        // width: 100%;
         height: auto;
         box-shadow: 0px 13px 19px 0px rgba(0, 0, 0, 0.07);
         border-radius: 10px;
 
         img {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
           width: 100%;
           height: 300px;
           margin-bottom: 20px;
+        }
+
+        .item_lll {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          background: #e74040;
+          font-family: Montserrat;
+          color: white;
+          font-size: 16px;
+          padding: 4px 15px;
+          border-radius: 7px;
+          font-weight: 700;
         }
         .accessCourses_item_info {
           width: 100%;
@@ -128,7 +144,7 @@
         .accessCourses_item {
           .accessCourses_item_info {
             button {
-              width: 145px;
+              width: 155px;
               padding: 7px 15px;
               font-size: 10.54px;
             }

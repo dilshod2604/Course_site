@@ -1,10 +1,10 @@
-import ProdfilePage from "@/src/components/site/pages/ProdfilePage";
+import MyProfile from "@/src/components/profile/pages/profile/MyProfile";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <ProdfilePage />
+      <MyProfile />
     </div>
   );
 };
