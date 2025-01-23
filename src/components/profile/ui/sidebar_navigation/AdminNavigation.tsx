@@ -35,7 +35,7 @@ const AdminNavigation: FC = () => {
 
         <li className={scss.nav_list}>
           <FaQuestionCircle />
-          <Link href="#">Помощь</Link>
+          <Link href="#" className={scss.link}>Помощь</Link>
         </li>
         <li className={scss.nav_list}>
           <CiLogout size={20} className={scss.link_icon} />

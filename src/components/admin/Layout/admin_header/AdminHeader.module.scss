@@ -10,5 +10,31 @@
     align-items: center;
     justify-content: space-between;
     padding-inline: 40px;
+    width: 100%;
+    .header_logo {
+      width: 50px;
+      height: 50px;
+    }
+    .header_actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      .bell_icon {
+        width: 50px;
+        height: 50px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .header_avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid gray;
+        overflow: hidden;
+      }
+    }
   }
 }

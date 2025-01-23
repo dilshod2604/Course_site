@@ -20,37 +20,39 @@ const Header = () => {
   const { data } = useGetMeQuery();
   const router = useRouter();
 
-  //items
-  const items: MenuProps["items"] = [
-    {
-      key: "1",
-      label: (
-        <Link
-          className="flex items-center gap-x-4"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="  /profile"
-        >
-          <RiUser6Line /> Мой профиль
-        </Link>
-      ),
-    },
-    data?.role === "ADMIN"
-      ? {
-          key: "2",
+  const items: MenuProps["items"] = data?.role === "ADMIN" 
+    ? [
+        {
+          key: "1",
           label: (
             <Link
               className="flex items-center gap-x-4"
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
               href="/admin"
             >
               <RiAdminLine /> Админ
             </Link>
           ),
-        }
-      : null,
-  ].filter(Boolean);
+        },
+      ]
+    : data?.role === "USER"
+    ? [
+        {
+          key: "2",
+          label: (
+            <Link
+              className="flex items-center gap-x-4"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="/profile"
+            >
+              <RiUser6Line /> Мой профиль
+            </Link>
+          ),
+        },
+      ]
+    : [];
 
   return (
     <header className={scss.Header}>

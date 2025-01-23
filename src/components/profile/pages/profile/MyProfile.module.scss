@@ -9,14 +9,14 @@
       border-radius: 10px;
       .profile_banner {
         width: 100%;
-        background: rgb(0, 225, 255);
-        height: 180px;
+        background: rgb(17, 67, 73);
+        height: clamp(100px, 20vw, 180px);
       }
       .profile_info_box {
         display: flex;
         align-items: start;
         justify-content: space-between;
-        padding: 20px;
+        padding: clamp(10px, 2vw, 20px);
         .profile_info {
           display: flex;
           gap: 32px;
@@ -24,8 +24,8 @@
 
           .profile_avatar {
             position: relative;
-            width: 100px;
-            height: 100px;
+            width: clamp(50px, 15vw, 100px);
+            height: clamp(50px, 15vw, 100px);
             border-radius: 50%;
             overflow: hidden;
             top: -50px;
@@ -41,36 +41,44 @@
           }
           .profile_name {
             display: flex;
-            align-items: center;
+            align-items: start;
+            flex-direction: column;
+
             .name_input {
-              height: 30px;
+              height: clamp(20px, 4vw, 30px);
+              width: clamp(70px, 10vw, 150px);
               border-radius: 5px;
               padding-inline: 5px;
+              margin-left: 5px;
               border: 1px solid gray;
               outline: none;
             }
             .name {
               color: rgb(37, 43, 66);
               font-family: Poppins;
-              font-size: 20px;
+              font-size: clamp(15px, 3vw, 20px);
               font-weight: 500;
               line-height: 30px;
               letter-spacing: 0px;
               text-align: left;
             }
+            i {
+              color: gray;
+              font-size: clamp(10px, 2vw, 14px);
+            }
           }
         }
       }
       .edit_button {
-        width: 159px;
-        height: 46px;
+        width: clamp(80px, 10vw, 159px);
+        height: clamp(35px, 5vw, 46px);
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         color: rgb(255, 255, 255);
         font-family: Poppins;
-        font-size: 16px;
+        font-size: clamp(10px, 2vw, 16px);
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0px;

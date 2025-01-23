@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import scss from "./MyProfile.module.scss";
 import Image from "next/image";
 import {
@@ -8,7 +8,7 @@ import {
 } from "@/src/redux/api/auth";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 
-interface ProfleData {
+interface ProfileData {
   name: string | undefined;
   banner: File | null;
 }
@@ -16,91 +16,82 @@ interface ProfleData {
 const MyProfile = () => {
   const { data } = useGetMeQuery();
   const [upDateUserProfile, { isLoading }] = useUpdateUserProfileMutation();
-  const [isEditClicked, setIsEditClicked] = useState<boolean>(false);
-  const [avatar, setAvatar] = useState<string | undefined>(data?.avatar);
-  const [profileData, setProfileData] = useState<ProfleData>({
-    banner: null,
+  const [isEditClicked, setIsEditClicked] = useState(false);
+  const [avatar, setAvatar] = useState<string | undefined>(null);
+  const [profileData, setProfileData] = useState<ProfileData>({
     name: data?.name,
+    banner: null,
   });
+
+  // Функция для показа ошибок через toast
+  const notifyError = (message: string) =>
+    toast.error(message, {
+      position: "top-right",
+      autoClose: 5000,
+      theme: "light",
+      transition: Bounce,
+    });
 
   const convertToBase64 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if ((file && file.type === "image/png") || file?.type === "image/jpeg") {
+    if (file) {
+      // Проверяем тип файла (PNG или JPG)
+      if (!["image/png", "image/jpeg"].includes(file.type)) {
+        notifyError("Пожалуйста, выберите PNG или JPG файл.");
+        return;
+      }
       const reader = new FileReader();
       reader.onload = (e) => {
-        const base64String = e.target?.result as string;
-        setAvatar(base64String);
+        const base64Image = e.target?.result as string;
+        setAvatar(base64Image); // Обновляем стейт с аватаром
+        localStorage.setItem("userAvatar", base64Image); // Сохраняем аватар в localStorage
       };
-      reader.readAsDataURL(file);
-    } else {
-      alert("Please select a PNG or JPG file.");
+      reader.readAsDataURL(file); // Преобразуем файл в base64
     }
   };
 
+  // Функция для обработки изменения профиля
   const handleEdit = async () => {
     if (isEditClicked) {
       try {
-        const data = {
-          name: profileData.name,
-          avatar,
-        };
-        const res = await upDateUserProfile(data);
+        const updateData = { name: profileData.name, avatar }; // Данные для обновления
+        const res = await upDateUserProfile(updateData); // Обновляем профиль через мутацию
         if (res.data?.id) {
-          setIsEditClicked(false);
-          toast.success("Ваш профил успешно изменен", {
+          setIsEditClicked(false); // Выключаем режим редактирования
+          toast.success("Ваш профиль успешно изменен", {
             position: "top-right",
             autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
             theme: "light",
             transition: Bounce,
           });
         } else {
-          toast.error("Ощибка при обновлении вашего профмля", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          });
+          notifyError("Ошибка при обновлении профиля");
         }
       } catch (error) {
-        console.log(error);
-        toast.error("Ощибка при обновлении вашего профмля", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          transition: Bounce,
-        });
+        console.error(error);
+        notifyError("Ошибка при обновлении профиля");
       }
     } else {
-      setIsEditClicked(true);
+      setIsEditClicked(true); // Включаем режим редактирования
     }
   };
+
+  // Используем useEffect для загрузки аватара при монтировании компонента
+  useEffect(() => {
+    // Проверяем наличие аватара в localStorage
+    const storedAvatar = localStorage.getItem("userAvatar");
+    if (storedAvatar) {
+      setAvatar(storedAvatar); // Если есть, устанавливаем его в стейт
+    } else if (data?.avatar) {
+      setAvatar(data.avatar); // Если нет в localStorage, устанавливаем аватар из данных пользователя
+    }
+  }, [data?.avatar]);
 
   return (
     <section className={scss.MyProfile}>
       <ToastContainer
         position="top-right"
         autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
         pauseOnHover
         theme="light"
         transition={Bounce}
@@ -111,26 +102,23 @@ const MyProfile = () => {
           <div className={scss.profile_info_box}>
             <div className={scss.profile_info}>
               <div className={scss.profile_avatar}>
+                {/* Инпут для загрузки аватара */}
                 <input
                   type="file"
                   className={scss.avatar_input}
                   accept="image/png, image/jpeg"
-                  onChange={convertToBase64}
+                  onChange={convertToBase64} // Вызываем функцию при изменении файла
                 />
+                {/* Отображаем аватар */}
                 <Image
-                  src={
-                    avatar
-                      ? avatar
-                      : data?.avatar
-                      ? data.avatar
-                      : "/default-avatar.png"
-                  }
+                  src={avatar || "/default-avatar.png"} // Если есть аватар, показываем его, иначе показываем дефолтный
                   alt="avatar"
                   width={100}
                   height={100}
                 />
               </div>
               <div className={scss.profile_name}>
+                {/* Если режим редактирования включен, отображаем инпут для редактирования имени */}
                 {isEditClicked ? (
                   <input
                     type="text"
@@ -141,16 +129,22 @@ const MyProfile = () => {
                     }
                   />
                 ) : (
-                  <p className={scss.name}>{data?.name}</p>
+                  <p className={scss.name}>{data?.name}</p> // Если не в режиме редактирования, показываем имя
                 )}
+                <i>Student</i>
               </div>
             </div>
+            {/* Кнопка для редактирования профиля */}
             <button
               className={scss.edit_button}
-              onClick={handleEdit}
-              disabled={isLoading}
+              onClick={handleEdit} // При клике вызываем функцию handleEdit
+              disabled={isLoading} // Блокируем кнопку, если идет загрузка
             >
-              {isEditClicked ? "Сохранить" : "Редактировать"}
+              {isLoading
+                ? "Сохранение..." // Если идет загрузка, показываем "Сохранение..."
+                : isEditClicked
+                ? "Сохранить" // Если редактируем, показываем "Сохранить"
+                : "Редактировать"}
             </button>
           </div>
         </div>
