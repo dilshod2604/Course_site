@@ -76,7 +76,7 @@ export const admin_side_bar_links: ISideBar[] = [
   },
   {
     name: "Курсы",
-    href: "/profile/course",
+    href: "/admin/adminCourse",
     fillIcon: MdEmail,
     outlineIcon: MdOutlineMailOutline,
   },
