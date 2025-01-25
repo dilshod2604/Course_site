@@ -7,6 +7,7 @@
       border: 1px solid gray;
       overflow: hidden;
       border-radius: 10px;
+      margin-bottom: 30px;
       .profile_banner {
         width: 100%;
         background: rgb(17, 67, 73);
@@ -85,6 +86,40 @@
         text-align: left;
         border-radius: 6px;
         background: rgb(35, 166, 240);
+      }
+    }
+    .admin_courses_box {
+      width: 100%;
+      border: 1px solid gray;
+      overflow: hidden;
+      border-radius: 10px;
+      .courses_btn {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-wrap: wrap;
+        overflow: hidden;
+        gap: clamp(10px, 2vw, 20px);
+        padding: 20px 20px 0 20px;
+
+        button {
+          padding-block: clamp(7px, 1vw, 10px);
+          padding-inline: clamp(14px, 2vw, 20px);
+          font-size: clamp(10px, 2vw, 20px);
+          border: 1px solid gray;
+          border-radius: 10px;
+          background-color: white;
+          color: black;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover,
+          &:active {
+            background: rgb(35, 166, 240);
+            color: white;
+            transform: scale(1.05);
+          }
+        }
       }
     }
   }

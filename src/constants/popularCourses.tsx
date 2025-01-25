@@ -13,7 +13,7 @@ interface ICorses {
   lll: string;
 }
 
-export const courses: ICorses[] = [
+export const popularCourses: ICorses[] = [
   {
     id: 1,
     title: "Как ставить о оценивать задачи",
@@ -22,7 +22,7 @@ export const courses: ICorses[] = [
     image: image1,
     time: "22ч 30мин",
     lessons: "64 урок",
-    lll: "Бесплатно",
+    lll: "1500 сом",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ export const courses: ICorses[] = [
     image: image2,
     time: "22ч 30мин",
     lessons: "64 урок",
-    lll: "Бесплатно",
+    lll: "1500 сом",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ export const courses: ICorses[] = [
     image: image3,
     time: "22ч 30мин",
     lessons: "64 урок",
-    lll: "Бесплатно",
+    lll: "1500 сом",
   },
+  // Add additional course entries here...
 ];
-

@@ -8,6 +8,7 @@ import {
   useUpdateAdminProfileMutation,
 } from "@/src/redux/api/auth";
 import { Bounce, ToastContainer, toast } from "react-toastify";
+import AdminCourses from "../adminCourses/AdminCourses";
 
 interface ProfileData {
   name: string;
@@ -157,6 +158,12 @@ const Dashboard = () => {
                 : "Редактировать"}
             </button>
           </div>
+        </div>
+        <div className={scss.admin_courses_box}>
+          <div className={scss.courses_btn}>
+            <button>Все курсы</button>
+          </div>
+          <AdminCourses />
         </div>
       </div>
     </section>
