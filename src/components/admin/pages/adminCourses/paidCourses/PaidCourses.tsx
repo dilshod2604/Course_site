@@ -1,42 +1,21 @@
-"use client";
-import React from "react";
-import scss from "./PopularCourses.module.scss";
+import { FC } from "react";
+import scss from "./PaidCourses.module.scss";
 import Image from "next/image";
-import Link from "next/link";
-import time from "../../../../../../assets/access_course/time.svg";
-import lesson from "../../../../../../assets/access_course/lesson.svg";
-import progress from "../../../../../../assets/access_course/progress.svg";
+import time from "../../../../../assets/access_course/time.svg";
+import lesson from "../../../../../assets/access_course/lesson.svg";
+import progress from "../../../../../assets/access_course/progress.svg";
 import { MdArrowForwardIos } from "react-icons/md";
-import { useRouter } from "next/navigation";
 import { popularCourses } from "@/src/constants/popularCourses";
 
-const PopularCourses = () => {
-  const router = useRouter();
+const PaidCourses: FC = () => {
   return (
-    <section className={scss.PopularCourses}>
+    <section className={scss.PaidCourses}>
       <div className="container">
-        <div className={scss.welcome_content}>
-          <div className={scss.content_text}>
-            <h1>Популярные курсы</h1>
-            <p>
-              Мы предоставляем множество функций, которые вы можете
-              использовать. Постепенное накопление информации.
-            </p>
-            <div className={scss.courses_btn}>
-              <button onClick={() => router.push("/all-courses")}>
-                Все курсы
-              </button>
-
-              <button>Управление компанией</button>
-              <button>Командаобразование</button>
-              <button>Маркетинг</button>
-              <button>Продажи</button>
-            </div>
-          </div>
+        <div className={scss.content}>
           <div className={scss.popularCourses_block}>
-            {popularCourses.slice(0, 3).map((el, index) => (
+            {popularCourses.map((el, index) => (
               <div key={index} className={scss.popularCourses_item}>
-                <Image src={el.image} alt="img" width={329} height={300} />
+                <Image src={el.image} alt="img" width={300} height={280} />
                 <p className={scss.item_lll}>{el.lll}</p>
 
                 <div className={scss.popularCourses_item_info}>
@@ -84,13 +63,10 @@ const PopularCourses = () => {
               </div>
             ))}
           </div>
-          <Link href={"/all-courses"}>
-            <button className={scss.all_courses_button}>Смотреть больше</button>
-          </Link>
         </div>
       </div>
     </section>
   );
 };
 
-export default PopularCourses;
+export default PaidCourses;

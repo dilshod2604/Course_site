@@ -7,6 +7,8 @@ import {
   useUpdateUserProfileMutation,
 } from "@/src/redux/api/auth";
 import { Bounce, ToastContainer, toast } from "react-toastify";
+import FreeCourses from "./freeCourses/FreeCourses";
+import { useRouter } from "next/navigation";
 
 interface ProfileData {
   name: string | undefined;
@@ -15,7 +17,9 @@ interface ProfileData {
 
 const MyProfile = () => {
   const { data } = useGetMeQuery();
+  const router = useRouter();
   const [upDateUserProfile, { isLoading }] = useUpdateUserProfileMutation();
+
   const [isEditClicked, setIsEditClicked] = useState(false);
   const [avatar, setAvatar] = useState<string | undefined>(null);
   const [profileData, setProfileData] = useState<ProfileData>({
@@ -147,6 +151,13 @@ const MyProfile = () => {
                 : "Редактировать"}
             </button>
           </div>
+        </div>
+        <div className={scss.profile_courses_box}>
+          <div className={scss.courses_btn}>
+            <button>Мои курсы</button>
+            <button onClick={() => router.push("/profile/favorites")}>Избранное</button>
+          </div>
+          <FreeCourses />
         </div>
       </div>
     </section>
