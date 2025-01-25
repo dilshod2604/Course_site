@@ -28,7 +28,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
         gap: 40px;
+        // border: 1px solid #000;
 
         h3 {
           color: rgba(0, 0, 0, 0.5);
@@ -47,6 +49,36 @@
           line-height: 24px;
           letter-spacing: 0.1px;
           text-align: left;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .CourseLessons {
+    .welcome_context_lessons {
+      .blocks {
+        .block_images {
+          justify-content: start;
+          flex-wrap: wrap;
+          max-width: 350px;
+          gap: 20px;
+          a {
+            img {
+              width: 160.73px;
+              height: 80.13px;
+            }
+            h3 {
+              font-size: 7.54px;
+              line-height: 10.84px;
+              letter-spacing: -0.28px;
+            }
+            h5 {
+              font-size: 9.43px;
+              line-height: 11.31px;
+              letter-spacing: 0.05px;
+            }
+          }
         }
       }
     }
