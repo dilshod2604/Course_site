@@ -12,6 +12,7 @@ import Image from "next/image";
 import { BiShare } from "react-icons/bi";
 import { GoSmiley } from "react-icons/go";
 import Link from "next/link";
+import image1 from "../../../../../../assets/course_id/Frame.png";
 
 const VideoAbout = () => {
   const { id } = useParams();
@@ -120,7 +121,7 @@ const VideoAbout = () => {
                 <div key={index} className={scss.message}>
                   <div className={scss.Users}>
                     <div className={scss.user_img}>
-                      <Image src={el.image} alt="img" width={20} height={20} />
+                      <Image src={el.image} alt="img" />
                     </div>
                     <div className={scss.user_info}>
                       <div className={scss.user_name}>

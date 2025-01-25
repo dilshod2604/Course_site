@@ -20,7 +20,7 @@ const AboutCourse = () => {
               </h5>
             </div>
             <div className={scss.text_about_1}>
-              <Image src={peopleImage} alt="img" width={445} height={500} />
+              <Image src={peopleImage} alt="img" width={445} height={600} />
               <div className={scss.text_about_2}>
                 <h2>Как ставить и оценивать задачи</h2>
                 <p className={scss.context_1}>

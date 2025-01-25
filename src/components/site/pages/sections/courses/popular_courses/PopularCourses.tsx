@@ -76,10 +76,12 @@ const PopularCourses = () => {
                       Прогресс
                     </span>
                   </div>
-                  <button>
-                    Узнать больше
-                    <MdArrowForwardIos />
-                  </button>
+                  <Link href={`/coursess/id`}>
+                    <button>
+                      Узнать больше
+                      <MdArrowForwardIos />
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
