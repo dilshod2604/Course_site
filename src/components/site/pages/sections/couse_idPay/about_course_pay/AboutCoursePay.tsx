@@ -1,10 +1,11 @@
 import React from "react";
-import scss from "./AboutCourse.module.scss";
+import scss from "./AboutCoursePay.module.scss";
 import Image from "next/image";
 import peopleImage from "../../../../../../assets/course_id/people.png"; // Убедитесь, что путь правильный
 import { lessons } from "@/src/constants/lessons";
+import CourseLessonsPay from "../cource_lessons_pay/CourseLessonsPay";
 
-const AboutCourse = () => {
+const AboutCoursePay = () => {
   console.log(lessons, "lessons"); // Для отладки
 
   return (
@@ -20,7 +21,7 @@ const AboutCourse = () => {
               </h5>
             </div>
             <div className={scss.text_about_1}>
-              <Image src={peopleImage} alt="img" />
+              <Image src={peopleImage} alt="img" width={445} height={500} />
               <div className={scss.text_about_2}>
                 <h2>Как ставить и оценивать задачи</h2>
                 <p className={scss.context_1}>
@@ -65,8 +66,9 @@ const AboutCourse = () => {
           </div>
         </div>
       </div>
+      <CourseLessonsPay />
     </section>
   );
 };
 
-export default AboutCourse;
+export default AboutCoursePay;

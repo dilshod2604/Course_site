@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import scss from "./CourseLessons.module.scss";
+import scss from "./CourseLessonsPay.module.scss";
 import Image from "next/image";
 import { lessons } from "@/src/constants/lessons";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
 
-const CourseLessons = () => {
+const CourseLessonsPay = () => {
   const router = useRouter();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -50,8 +50,8 @@ const CourseLessons = () => {
                           <Image
                             src={el.image || "/default-image.png"}
                             alt="img"
-                            // width={341}
-                            // height={170}
+                            width={341}
+                            height={170}
                           />
                           <h3> {video.title}</h3>
                           <h5>{video.description}</h5>
@@ -64,8 +64,8 @@ const CourseLessons = () => {
                           <Image
                             src={el.image || "/default-image.png"}
                             alt="img"
-                            // width={341}
-                            // height={170}
+                            width={341}
+                            height={170}
                           />
                           <h3> {video.title}</h3>
                           <h5>{video.description}</h5>
@@ -78,8 +78,8 @@ const CourseLessons = () => {
                           <Image
                             src={el.image || "/default-image.png"}
                             alt="img"
-                            // width={341}
-                            // height={170}
+                            width={341}
+                            height={170}
                           />
                           <h3> {video.title}</h3>
                           <h5>{video.description}</h5>
@@ -96,4 +96,4 @@ const CourseLessons = () => {
   );
 };
 
-export default CourseLessons;
+export default CourseLessonsPay;

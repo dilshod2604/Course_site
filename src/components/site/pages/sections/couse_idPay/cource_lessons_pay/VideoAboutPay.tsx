@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import scss from "./VideoAbout.module.scss";
+import scss from "./VideoAboutPay.module.scss";
 import { useParams } from "next/navigation";
 import { lessons } from "@/src/constants/lessons";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
@@ -54,6 +54,8 @@ const VideoAbout = () => {
                     <>
                       <iframe
                         key={`${el.id}-${videoIndex}`}
+                        width="550px"
+                        height="250px"
                         src={`https://www.youtube.com/embed/${extractVideoId(
                           el.video
                         )}`}
@@ -113,38 +115,31 @@ const VideoAbout = () => {
           </div>
           <div className={scss.line}></div>
           <div className={scss.videoAbout_message}>
-            <>
-              {message.map((el, index) => (
-                <>
-                  <div key={index} className={scss.message}>
-                    <div className={scss.Users}>
-                      <div className={scss.user_img}>
-                        <Image
-                          src={el.image}
-                          alt="img"
-                          width={20}
-                          height={20}
-                        />
+            {message.map((el, index) => (
+              <>
+                <div key={index} className={scss.message}>
+                  <div className={scss.Users}>
+                    <div className={scss.user_img}>
+                      <Image src={el.image} alt="img" width={20} height={20} />
+                    </div>
+                    <div className={scss.user_info}>
+                      <div className={scss.user_name}>
+                        <h4>{el.name}</h4>
+                        <p>{el.time}</p>
                       </div>
-                      <div className={scss.user_info}>
-                        <div className={scss.user_name}>
-                          <h4>{el.name}</h4>
-                          <p>{el.time}</p>
-                        </div>
-                        <h5>{el.message}</h5>
-                        <div className={scss.user_message}>
-                          <h6>
-                            <BiShare />
-                            {el.description}
-                          </h6>
-                          <h6>{el.time2}</h6>
-                        </div>
+                      <h5>{el.message}</h5>
+                      <div className={scss.user_message}>
+                        <h6>
+                          <BiShare />
+                          {el.description}
+                        </h6>
+                        <h6>{el.time2}</h6>
                       </div>
                     </div>
                   </div>
-                </>
-              ))}
-            </>
+                </div>
+              </>
+            ))}
             <div className={scss.emogis}>
               <input type="text" placeholder="Комментировать..." />
               <GoSmiley />

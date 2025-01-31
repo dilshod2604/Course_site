@@ -8,10 +8,12 @@ import time from "../../../../../../assets/access_course/time.svg";
 import lesson from "../../../../../../assets/access_course/lesson.svg";
 import progress from "../../../../../../assets/access_course/progress.svg";
 import { MdArrowForwardIos } from "react-icons/md";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 const PopularCourses = () => {
   const router = useRouter();
+  const { id } = useParams();
+
   return (
     <section className={scss.PopularCourses}>
       <div className="container">
@@ -76,10 +78,12 @@ const PopularCourses = () => {
                       Прогресс
                     </span>
                   </div>
-                  <button>
-                    Узнать больше
-                    <MdArrowForwardIos />
-                  </button>
+                  <Link href={`/course/da`}>
+                    <button>
+                      Узнать больше
+                      <MdArrowForwardIos />
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
