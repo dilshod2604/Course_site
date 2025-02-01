@@ -33,6 +33,10 @@ interface UpdateUserProfile {
   name?: string | undefined;
   avatar?: string;
 }
+interface UpdateUserProfileAdmin {
+  name?: string | undefined;
+  avatar?: string;
+}
 
 interface UpdateFavoriteRequest {
   userId: string;

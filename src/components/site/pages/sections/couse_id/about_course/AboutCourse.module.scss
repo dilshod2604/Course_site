@@ -1,0 +1,170 @@
+.AboutCourse {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  .welcome_content {
+    .welcome_content_text {
+      .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 65px;
+        gap: clamp(15px, 0.76vw, 12px);
+        h1 {
+          color: rgb(11, 19, 42);
+          font-family: Rubik;
+          font-size: clamp(24px, 4vw, 50px);
+          font-weight: 700;
+          line-height: clamp(30px, 4.5vh, 70px);
+
+          letter-spacing: 0%;
+          text-align: left;
+        }
+        h5 {
+          color: rgb(79, 86, 101);
+          font-family: Rubik;
+          font-size: clamp(14px, 1vw, 16px);
+          font-weight: 400;
+          line-height: clamp(18px, 1.85vw, 30px);
+
+          letter-spacing: 0%;
+          text-align: center;
+          max-width: 500px;
+        }
+      }
+      .text_about_1 {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 25px;
+        margin-bottom: 20px;
+        img {
+          width: clamp(350px, 28.56vw, 457px);
+        }
+        .text_about_2 {
+          h2 {
+            color: rgb(37, 43, 66);
+            font-family: Rubik;
+            font-size: clamp(24px, 2.25vw, 36px);
+            font-weight: 700;
+            line-height: clamp(30px, 2.43vh, 39px);
+
+            letter-spacing: 0.1px;
+            text-align: left;
+          }
+          .context_1 {
+            color: rgb(0, 0, 0);
+            font-family: Rubik;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22.86px;
+            letter-spacing: 0%;
+            text-align: left;
+            margin-top: 11px;
+          }
+          .context_2 {
+            color: rgb(0, 0, 0);
+            font-family: Rubik;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22.86px;
+            letter-spacing: 0%;
+            text-align: left;
+            margin-top: 11px;
+            span {
+              font-weight: 600;
+            }
+          }
+          .context_3 {
+            color: rgb(0, 0, 0);
+            font-family: Rubik;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22.86px;
+            letter-spacing: 0%;
+            text-align: left;
+            margin-top: 11px;
+            span {
+              font-weight: 600;
+            }
+          }
+          .context_4 {
+            color: rgb(0, 0, 0);
+            font-family: Rubik;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22.86px;
+            letter-spacing: 0%;
+            text-align: left;
+            margin-top: 25px;
+            max-width: 660px;
+            width: 100%;
+            height: 115px;
+            span {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      .block_text {
+        color: rgb(0, 0, 0);
+        font-family: Rubik;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22.86px;
+        letter-spacing: 0%;
+        text-align: left;
+        max-width: 1140px;
+        height: 92px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .AboutCourse {
+    margin-bottom: 250px;
+    .welcome_content {
+      .welcome_content_text {
+        flex-direction: column;
+        .text {
+          margin-bottom: 25px;
+          h1 {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .text_about_1 {
+        flex-direction: column;
+      }
+
+      .text_about_2 {
+        flex-direction: column;
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .AboutCourse {
+    .welcome_content {
+      .welcome_content_text {
+        margin-bottom: 250px;
+        .text {
+          margin-bottom: 34px;
+          h1 {
+            font-size: 36px;
+          }
+          h5 {
+            max-width: 349px;
+          }
+        }
+        .text_about_1 {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 130px;
+        }
+      }
+    }
+  }
+}

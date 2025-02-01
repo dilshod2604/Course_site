@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import scss from "./Reviews.module.scss";
 import { reviews } from "../../../../constants/reviews";
 import Image from "next/image";
@@ -7,6 +8,35 @@ import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 
 const Reviews = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [size, setSize] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth <= 640);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const scrollNext = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: size ? 320 : 600,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollPrev = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: size ? -320 : -600,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <section className={scss.Reviews}>
       <div className="container">
@@ -18,7 +48,7 @@ const Reviews = () => {
               использовать. Постепенное накоплениеинформация
             </p>
           </div>
-          <div className={scss.welcome_content_block}>
+          <div className={scss.welcome_content_block} ref={scrollContainerRef}>
             {reviews.map((el, index) => (
               <div key={index} className={scss.reviews_content}>
                 <div className={scss.reviews_info}>
@@ -42,10 +72,10 @@ const Reviews = () => {
               <div className={scss.blocks_arrow}></div>
             </div>
             <div className={scss.buttons}>
-              <button className={scss.arrow}>
+              <button onClick={scrollPrev} className={scss.arrow}>
                 <FaArrowLeft />
               </button>
-              <button className={scss.arrow}>
+              <button onClick={scrollNext} className={scss.arrow}>
                 <FaArrowRight />
               </button>
             </div>

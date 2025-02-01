@@ -9,6 +9,7 @@ const ProfileLayout = ({ children }: { children: ReactNode }) => {
       <ProfileHeader />
       <div className={scss.profile_main_box}>
         <SIdeBar />
+        {/* <ChatsSelect/> */}
         <main>{children}</main>
       </div>
     </div>

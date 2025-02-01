@@ -35,7 +35,6 @@ export const GET = async () => {
   }
 };
 
-//// Profile
 export const PATCH = async (req: Request) => {
   try {
     const { name, avatar } = await req.json();
@@ -47,21 +46,22 @@ export const PATCH = async (req: Request) => {
         { status: 401 }
       );
     }
+
     const userUpdate = await client.user.update({
       where: {
-        id: userCookie?.value,
+        id: userCookie.value,
       },
       data: {
         name,
-        avatar: avatar,
+        avatar,
       },
     });
 
     return NextResponse.json(userUpdate, { status: 200 });
   } catch (error) {
-    console.error(error);
+    console.error("Ошибка при обновлении профиля пользователя:", error);
     return NextResponse.json(
-      { message: "Internal Server Error" },
+      { message: "Внутренняя ошибка сервера" },
       { status: 500 }
     );
   }

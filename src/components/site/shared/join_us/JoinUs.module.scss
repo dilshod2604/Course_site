@@ -25,12 +25,17 @@
       align-items: center;
       position: absolute;
       top: clamp(85%, 28vw, 82%);
+
       input {
         width: clamp(200px, 65vw, 800px);
         height: clamp(25px, 10vw, 70px);
         padding: clamp(10px, 5vw, 20px);
         font-family: Montserrat;
         font-size: clamp(10px, 3vw, 20px);
+        border: none;
+        border: 1px solid gray;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
       }
       button {
         width: clamp(70px, 20vw, 177px);
@@ -40,6 +45,8 @@
         color: white;
         background: #23a6f0;
         border: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
       }
     }
   }

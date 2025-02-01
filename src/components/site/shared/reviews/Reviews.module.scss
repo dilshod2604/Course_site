@@ -133,6 +133,9 @@
         margin-left: clamp(2px, 1vw, 90px);
         gap: clamp(12px, 1.8vw, 30px);
         .arrow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           box-sizing: border-box;
           border: 2px solid rgb(35, 166, 240);
           box-shadow: 0px 14px 44px 0px rgba(14, 20, 34, 0.08);

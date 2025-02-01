@@ -1,10 +1,14 @@
 .SIdeBar {
-  max-width: 300px;
-  width: 100%;
+    width: clamp(
+      120px,
+      25vw,
+      250px
+    ); /* Минимальная ширина 200px, предпочтительная 25% от ширины экрана, максимальная 300px */
   border-right: 0.5px solid #ddd;
   display: flex;
   justify-content: center;
   background-color: #fff;
+
   .content {
     display: flex;
     flex-direction: column;
