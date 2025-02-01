@@ -1,6 +1,12 @@
 .CourseWelcome {
   margin-top: 100px;
 
+  h2 {
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+  }
+
   .welcome_content {
     display: flex;
     align-items: center;

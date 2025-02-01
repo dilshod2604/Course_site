@@ -5,7 +5,7 @@
   background: #f0f2f5;
 
   .chatContainer {
-    width: clamp(150px, 60vw, 700px);
+    width: clamp(130px, 55vw, 700px);
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -87,8 +87,10 @@
         background: #f9f9f9;
 
         input {
-          flex: 1;
-          padding: clamp(5px, 2vw, 12px);
+          // flex: 1;
+          padding: clamp(2px, 1vw, 12px);
+          width: clamp(80px, 40vw, 600px);
+          height: 50px;
           border: 1px solid #ddd;
           border-radius: 8px;
           font-size: 1rem;
@@ -102,7 +104,7 @@
         }
 
         button {
-          padding: 12px 20px;
+          padding: 10px 20px;
           background: #0078ff;
           color: white;
           border: none;

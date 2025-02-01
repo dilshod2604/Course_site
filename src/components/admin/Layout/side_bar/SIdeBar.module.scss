@@ -1,7 +1,7 @@
 .SIdeBar {
   width: clamp(
-    80px,
-    20vw,
+    120px,
+    25vw,
     250px
   ); /* Минимальная ширина 200px, предпочтительная 25% от ширины экрана, максимальная 300px */
   border-right: 0.5px solid #ddd;
@@ -16,3 +16,39 @@
     padding: 50px 20px 20px 20px;
   }
 }
+
+// .SideBar {
+//   width: clamp(80px, 20vw, 250px);
+//   border-right: 0.5px solid #ddd;
+//   display: flex;
+//   justify-content: center;
+//   background-color: #fff;
+//   transition: width 0.3s ease; /* Добавляем плавное изменение ширины */
+
+//   &.collapsed {
+//     width: 0; /* Скрыть боковую панель */
+//   }
+
+//   .content {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     padding: 50px 20px 20px 20px;
+//     opacity: 1;
+//     transition: opacity 0.3s ease;
+//   }
+
+//   &.collapsed .content {
+//     opacity: 0; /* Прячем контент при скрытии боковой панели */
+//   }
+// }
+
+// @media (max-width: 400px) {
+//   .SideBar {
+//     width: 0; /* Скрыть боковую панель по умолчанию на маленьких экранах */
+//   }
+
+//   .SideBar.collapsed {
+//     width: 250px; /* Развернуть панель при активации */
+//   }
+// }

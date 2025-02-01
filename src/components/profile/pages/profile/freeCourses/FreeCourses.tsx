@@ -33,9 +33,9 @@ const FreeCourses = () => {
       >
         <Image src={el.image} alt="img" width={329} height={300} />
         <p className={scss.item_lll}>{el.lll}</p>
-        <button onClick={() => handleAddToFavorites(el)}>
+        {/* <button onClick={() => handleAddToFavorites(el)}>
           <IoIosHeartEmpty />
-        </button>
+        </button> */}
 
         <div className={scss.FreeCourses_item_info}>
           <h3 className={scss.item_title}>{el.title}</h3>

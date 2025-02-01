@@ -1,19 +1,17 @@
-.PaidCourses {
-  //   margin: 25px 0px;
-  .content {
+.FreeCourses {
+  margin: 25px 0px;
+  .welcome_content {
     display: flex;
     align-items: start;
     justify-content: start;
     flex-direction: column;
-    .popularCourses_block {
-      margin-top: 50px;
+
+    .FreeCourses_block {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
       gap: 40px;
-      .popularCourses_item {
+      .FreeCourses_item {
         position: relative;
+        // width: 100%;
         height: auto;
         box-shadow: 0px 13px 19px 0px rgba(0, 0, 0, 0.07);
         border-radius: 10px;
@@ -25,19 +23,20 @@
           height: clamp(200px, 30vw, 300px);
           margin-bottom: 20px;
         }
+
         .item_lll {
           position: absolute;
-          top: 25px;
+          top: 10px;
           left: 10px;
           background: #e74040;
           font-family: Montserrat;
           color: white;
-          font-size: 16px;
-          padding: 3px 20px;
+          font-size: clamp(13px, 2vw, 16px);
+          padding: 4px 15px;
           border-radius: 7px;
           font-weight: 700;
         }
-        .popularCourses_item_info {
+        .FreeCourses_item_info {
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -97,6 +96,38 @@
             align-items: center;
             justify-content: start;
             gap: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .FreeCourses {
+    .welcome_content {
+      .FreeCourses_block {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .FreeCourses_item {
+          max-width: 700px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .FreeCourses {
+    .welcome_content {
+      .FreeCourses_block {
+        .FreeCourses_item {
+          .FreeCourses_item_info {
+            button {
+              width: 155px;
+              padding: 7px 15px;
+              font-size: 10.54px;
+            }
           }
         }
       }
