@@ -69,6 +69,7 @@
             color: rgb(255, 255, 255);
             font-family: Poppins;
             font-size: clamp(10px, 1vw, 16px);
+
             font-weight: 400;
             line-height: clamp(15px, 1.5vw, 24px);
             letter-spacing: 0px;
@@ -123,7 +124,7 @@
           gap: clamp(10px, 0.92vw, 15px);
           h6 {
             color: rgba(0, 0, 0, 0.5);
-            font-family: Poppins;
+            font-family: sans-serif Poppins;
             font-size: 14px;
             font-weight: 400;
             line-height: 21px;
@@ -169,7 +170,7 @@
 
               h4 {
                 color: rgb(0, 0, 0);
-                font-family: Poppins;
+                font-family: sans-serif Poppins;
                 font-size: 14px;
                 font-weight: 600;
                 line-height: 0px;
@@ -178,7 +179,7 @@
               }
               p {
                 color: rgb(0, 0, 0);
-                font-family: Poppins;
+                font-family: sans-serif Poppins;
                 font-size: 14px;
                 font-weight: 300;
                 line-height: 0px;
@@ -188,7 +189,7 @@
             }
             h5 {
               color: rgba(0, 0, 0, 0.85);
-              font-family: Poppins;
+              font-family: sans-serif Poppins;
               font-size: 14px;
               font-weight: 400;
               line-height: 21px;
@@ -207,7 +208,7 @@
                 justify-content: center;
                 gap: 5px;
                 color: rgba(0, 0, 0, 0.4);
-                font-family: Poppins;
+                font-family: sans-serif Poppins;
                 font-size: 12px;
                 font-weight: 400;
                 line-height: 18px;
@@ -292,6 +293,7 @@
           svg {
             bottom: 100px;
             left: 310px;
+
           }
         }
       }

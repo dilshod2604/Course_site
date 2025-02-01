@@ -28,7 +28,7 @@ export const message: IMessage[] = [
   {
     id: 1,
     image: user2,
-    name: "Ира",
+    name: "Александр",
     time: "12:00",
     message: "Все классно! Спасибо",
     description: "Ответить",
@@ -37,7 +37,7 @@ export const message: IMessage[] = [
   {
     id: 1,
     image: user3,
-    name: "Ира",
+    name: "Алексей",
     time: "12:00",
     message: "Крутой урок мне понравилось",
     description: "Ответить",
@@ -46,7 +46,7 @@ export const message: IMessage[] = [
   {
     id: 1,
     image: user4,
-    name: "Ира",
+    name: "Кристина",
     time: "12:00",
     message: "Расскажите подробнее",
     description: "Ответить",

@@ -3,12 +3,13 @@ import React from "react";
 import scss from "./PopularCourses.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { popularCourses } from "../../../../../../constants/couse";
 import time from "../../../../../../assets/access_course/time.svg";
 import lesson from "../../../../../../assets/access_course/lesson.svg";
 import progress from "../../../../../../assets/access_course/progress.svg";
 import { MdArrowForwardIos } from "react-icons/md";
 import { useParams, useRouter } from "next/navigation";
+import { popularCourses } from "@/src/constants/popularCourses";
+
 
 const PopularCourses = () => {
   const router = useRouter();
@@ -79,6 +80,7 @@ const PopularCourses = () => {
                     </span>
                   </div>
                   <Link href={`/course/da`}>
+
                     <button>
                       Узнать больше
                       <MdArrowForwardIos />

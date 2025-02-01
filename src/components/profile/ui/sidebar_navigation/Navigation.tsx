@@ -16,14 +16,14 @@ const Navigation = () => {
           <li key={index} className={scss.nav_list}>
             {pathname === link.href ? (
               <>
-                <link.fillIcon size={20} className={scss.link_icon_active} />
+                <link.fillIcon className={scss.link_icon_active} />
                 <Link href={link.href} className={scss.link_active}>
                   {link.name}
                 </Link>
               </>
             ) : (
               <>
-                <link.outlineIcon size={20} className={scss.link_icon} />
+                <link.outlineIcon className={scss.link_icon} />
                 <Link href={link.href} className={scss.link}>
                   {link.name}
                 </Link>
@@ -32,12 +32,15 @@ const Navigation = () => {
           </li>
         ))}
 
-        <li className={scss.nav_list}>
-          <FaQuestionCircle />
-          <Link href="#">Помощь</Link>
+        <li className={`${scss.nav_list} ${scss.help}`}>
+          <FaQuestionCircle className={scss.link_icon} />
+          <Link href="#" className={scss.link}>
+            Помощь
+          </Link>
         </li>
+
         <li className={scss.nav_list}>
-          <CiLogout size={20} className={scss.link_icon} />
+          <CiLogout className={scss.link_icon} />
           <Link href="#" className={scss.link}>
             Выйти
           </Link>

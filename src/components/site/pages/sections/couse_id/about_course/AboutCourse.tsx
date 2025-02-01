@@ -21,6 +21,7 @@ const AboutCourse = () => {
             </div>
             <div className={scss.text_about_1}>
               <Image src={peopleImage} alt="img" />
+
               <div className={scss.text_about_2}>
                 <h2>Как ставить и оценивать задачи</h2>
                 <p className={scss.context_1}>

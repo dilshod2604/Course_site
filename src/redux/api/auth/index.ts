@@ -32,6 +32,14 @@ const api = index.injectEndpoints({
       }),
       invalidatesTags: ["auth"],
     }),
+    updateAdminProfile: build.mutation<UserResponse, UpdateUserProfileAdmin>({
+      query: (data) => ({
+        method: "PATCH",
+        url: "/auth/admin", 
+        body: data,
+      }),
+      invalidatesTags: ["auth"],
+    }),
   }),
 });
 export const {
@@ -39,4 +47,5 @@ export const {
   useSignInUserMutation,
   useGetMeQuery,
   useUpdateUserProfileMutation,
+  useUpdateAdminProfileMutation, // Новая мутация для обновления профиля администратора
 } = api;

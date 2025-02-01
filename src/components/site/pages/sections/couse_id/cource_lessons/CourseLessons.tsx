@@ -50,8 +50,7 @@ const CourseLessons = () => {
                           <Image
                             src={el.image || "/default-image.png"}
                             alt="img"
-                            // width={341}
-                            // height={170}
+
                           />
                           <h3> {video.title}</h3>
                           <h5>{video.description}</h5>
@@ -64,8 +63,7 @@ const CourseLessons = () => {
                           <Image
                             src={el.image || "/default-image.png"}
                             alt="img"
-                            // width={341}
-                            // height={170}
+
                           />
                           <h3> {video.title}</h3>
                           <h5>{video.description}</h5>
@@ -78,8 +76,7 @@ const CourseLessons = () => {
                           <Image
                             src={el.image || "/default-image.png"}
                             alt="img"
-                            // width={341}
-                            // height={170}
+
                           />
                           <h3> {video.title}</h3>
                           <h5>{video.description}</h5>

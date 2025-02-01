@@ -1,13 +1,13 @@
 "use client";
 import scss from "./AllCourses.module.scss";
 import Image from "next/image";
-import { popularCourses } from "../../../../../../constants/couse";
 import time from "../../../../../../assets/access_course/time.svg";
 import lesson from "../../../../../../assets/access_course/lesson.svg";
 import progress from "../../../../../../assets/access_course/progress.svg";
 import { MdArrowForwardIos } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { VscChevronLeft } from "react-icons/vsc";
+import { popularCourses } from "@/src/constants/popularCourses";
 
 const AllCourses = () => {
   const route = useRouter();
