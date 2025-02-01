@@ -43,7 +43,7 @@ const Header = () => {
           label: (
             <Link
               className="flex items-center gap-x-4"
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
               href="/profile"
             >

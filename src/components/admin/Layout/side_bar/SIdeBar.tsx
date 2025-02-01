@@ -5,10 +5,11 @@ import AdminNavigation from "@/src/components/profile/ui/sidebar_navigation/Admi
 const SIdeBar = () => {
   return (
     <div className={scss.SIdeBar}>
-      <div className={scss.content}>
-        {/* <Navigation /> */}
+       <div className="container">
+       <div className={scss.content}>
         <AdminNavigation/>
       </div>
+       </div>
     </div>
   );
 };

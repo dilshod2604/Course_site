@@ -1,6 +1,11 @@
 .AboutWelcome {
   margin: 100px 0;
   background-color: #fff;
+  h2 {
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+  }
 
   .welcome_content {
     display: flex;
@@ -37,7 +42,7 @@
 
   @media (max-width: 600px) {
     .welcome_content {
-      flex-direction: column; 
+      flex-direction: column;
       align-items: center; /* Центрируем элементы */
       justify-content: flex-start; /* Выравнивание по верхнему краю */
 

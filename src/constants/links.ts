@@ -21,6 +21,8 @@ import { PiChatsCircleFill, PiChatsCircleLight } from "react-icons/pi";
 import { MdEmail, MdOutlineMailOutline } from "react-icons/md";
 import { IoSettingsOutline, IoSettings } from "react-icons/io5";
 import { IconType } from "react-icons/lib";
+import { BiSolidGroup } from "react-icons/bi";
+import { BiGroup } from "react-icons/bi";
 
 interface ISideBar {
   name: string;
@@ -65,14 +67,20 @@ export const admin_side_bar_links: ISideBar[] = [
   {
     name: "Профиль",
     href: "/admin",
-    fillIcon: FaUser,
-    outlineIcon: FaRegUser,
+    fillIcon: FaRegUser,
+    outlineIcon: FaUser,
   },
   {
     name: "Чат",
     href: "/profile/chat",
     fillIcon: PiChatsCircleFill,
     outlineIcon: PiChatsCircleLight,
+  },
+  {
+    name: "Студенты",
+    href: "/admin/adminStudent",
+    fillIcon: BiSolidGroup,
+    outlineIcon: BiGroup,
   },
   {
     name: "Курсы",

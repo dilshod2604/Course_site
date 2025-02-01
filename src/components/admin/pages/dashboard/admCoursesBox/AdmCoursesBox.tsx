@@ -1,22 +1,17 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
-import scss from "./Dashboard.module.scss";
+import { FC, useEffect, useState } from "react";
+import scss from "./AdmCoursesBox.module.scss";
 import Image from "next/image";
 import {
   useGetMeQuery,
   useUpdateAdminProfileMutation,
 } from "@/src/redux/api/auth";
-import { Bounce, ToastContainer, toast } from "react-toastify";
-import AdminCourses from "../adminCourses/AdminCourses";
-import AdmCoursesBox from "./admCoursesBox/AdmCoursesBox";
-
+import { Bounce, toast } from "react-toastify";
 interface ProfileData {
   name: string;
   banner: File | null;
 }
-
-const Dashboard = () => {
+const AdmCoursesBox: FC = () => {
   const { data } = useGetMeQuery();
   const [updateAdminProfile, { isLoading }] = useUpdateAdminProfileMutation();
   const [isEditClicked, setIsEditClicked] = useState(false);
@@ -102,74 +97,55 @@ const Dashboard = () => {
   if (!data) {
     return <div>Загрузка...</div>;
   }
-
-  return (
-    <section className={scss.Dashboard}>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        pauseOnHover
-        theme="light"
-        transition={Bounce}
-      />
-      <div className={scss.content}>
-        {/* <div className={scss.profile}>
-          <div className={scss.profile_banner}></div>
-          <div className={scss.profile_info_box}>
-            <div className={scss.profile_info}>
-              <div className={scss.profile_avatar}>
-                <input
-                  type="file"
-                  className={scss.avatar_input}
-                  accept="image/png, image/jpeg"
-                  onChange={convertToBase64}
-                />
-                <Image
-                  src={avatar || "/default-avatar.png"}
-                  alt="avatar"
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className={scss.profile_name}>
-                {isEditClicked ? (
-                  <input
-                    type="text"
-                    value={profileData.name}
-                    className={scss.name_input}
-                    onChange={(e) =>
-                      setProfileData({ ...profileData, name: e.target.value })
-                    }
-                  />
-                ) : (
-                  <p className={scss.name}>{data?.name}</p>
-                )}
-                <i>Admin</i>
-              </div>
-            </div>
-            <button
-              className={scss.edit_button}
-              onClick={handleEdit}
-              disabled={isLoading}
-            >
-              {isLoading
-                ? "Сохранение..."
-                : isEditClicked
-                ? "Сохранить"
-                : "Редактировать"}
-            </button>
-          </div>
-        </div> */}
-        <AdmCoursesBox/>
-        <div className={scss.admin_courses_box}>
-          <div className={scss.courses_btn}>
-            <button>Все курсы</button>
-          </div>
-          <AdminCourses />
+ return (
+    <div className={scss.profile}>
+    <div className={scss.profile_banner}></div>
+    <div className={scss.profile_info_box}>
+      <div className={scss.profile_info}>
+        <div className={scss.profile_avatar}>
+          <input
+            type="file"
+            className={scss.avatar_input}
+            accept="image/png, image/jpeg"
+            onChange={convertToBase64}
+          />
+          <Image
+            src={avatar || "/default-avatar.png"}
+            alt="avatar"
+            width={100}
+            height={100}
+          />
+        </div>
+        <div className={scss.profile_name}>
+          {isEditClicked ? (
+            <input
+              type="text"
+              value={profileData.name}
+              className={scss.name_input}
+              onChange={(e) =>
+                setProfileData({ ...profileData, name: e.target.value })
+              }
+            />
+          ) : (
+            <p className={scss.name}>{data?.name}</p>
+          )}
+          <i>Admin</i>
         </div>
       </div>
-    </section>
-  );
+      <button
+        className={scss.edit_button}
+        onClick={handleEdit}
+        disabled={isLoading}
+      >
+        {isLoading
+          ? "Сохранение..."
+          : isEditClicked
+          ? "Сохранить"
+          : "Редактировать"}
+      </button>
+    </div>
+  </div>
+ );
 };
 
-export default Dashboard;
+export default AdmCoursesBox;
