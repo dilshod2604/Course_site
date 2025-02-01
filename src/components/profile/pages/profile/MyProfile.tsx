@@ -21,7 +21,7 @@ const MyProfile = () => {
   const [upDateUserProfile, { isLoading }] = useUpdateUserProfileMutation();
 
   const [isEditClicked, setIsEditClicked] = useState(false);
-  const [avatar, setAvatar] = useState<string | undefined>(null);
+  const [avatar, setAvatar] = useState<string | undefined>();
   const [profileData, setProfileData] = useState<ProfileData>({
     name: data?.name,
     banner: null,
