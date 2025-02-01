@@ -113,7 +113,7 @@ const Dashboard = () => {
         transition={Bounce}
       />
       <div className={scss.content}>
-        {/* <div className={scss.profile}>
+        <div className={scss.profile}>
           <div className={scss.profile_banner}></div>
           <div className={scss.profile_info_box}>
             <div className={scss.profile_info}>
@@ -159,8 +159,8 @@ const Dashboard = () => {
                 : "Редактировать"}
             </button>
           </div>
-        </div> */}
-        <AdmCoursesBox/>
+        </div>
+        <AdmCoursesBox />
         <div className={scss.admin_courses_box}>
           <div className={scss.courses_btn}>
             <button>Все курсы</button>

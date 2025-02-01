@@ -12,8 +12,6 @@ import Image from "next/image";
 import { BiShare } from "react-icons/bi";
 import { GoSmiley } from "react-icons/go";
 import Link from "next/link";
-import image1 from "../../../../../../assets/course_id/Frame.png";
-
 const VideoAbout = () => {
   const { id } = useParams();
   const lesson = lessons.find((el) => el.id === Number(id));
@@ -54,7 +52,7 @@ const VideoAbout = () => {
                   {lesson.video.map((el, videoIndex) => (
                     <>
                       <iframe
-                        key={`${el.id}-${videoIndex}`}
+                        key={`${videoIndex}`}
                         src={`https://www.youtube.com/embed/${extractVideoId(
                           el.video
                         )}`}

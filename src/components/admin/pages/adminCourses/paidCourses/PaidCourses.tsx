@@ -7,21 +7,16 @@ import lesson from "../../../../../assets/access_course/lesson.svg";
 import progress from "../../../../../assets/access_course/progress.svg";
 import { MdArrowForwardIos } from "react-icons/md";
 import Link from "next/link";
-import { courses } from "@/src/constants/couse";
-import { IoIosHeartEmpty } from "react-icons/io";
-import { useFavoriteStore } from "@/src/store/useFavorite";
-import { useRouter } from "next/navigation";
-import CourseCard from "@/src/components/site/shared/courseCard/CourseCard";
-import { popularCourses } from "@/src/constants/popularCourses";
+  import { popularCourses } from "@/src/constants/popularCourses";
 
 const FreeCourses = () => {
-  const addToFavorites = useFavoriteStore((state) => state.addToFavorites);
-  const router = useRouter();
+  // const addToFavorites = useFavoriteStore((state) => state.addToFavorites);
+  // const router = useRouter();
 
-  const handleAddToFavorites = (course: any) => {
-    addToFavorites(course); // Добавляем в избранное
-    router.push("/favorites"); // Переходим на страницу избранных
-  };
+  // const handleAddToFavorites = (course: any) => {
+  //   addToFavorites(course); // Добавляем в избранное
+  //   router.push("/favorites"); // Переходим на страницу избранных
+  // };
   return (
     <section className={scss.FreeCourses}>
       <div className="container">

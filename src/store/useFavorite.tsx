@@ -1,8 +1,9 @@
 import { create } from "zustand";
+import { ICorses } from "../constants/couse";
 
 interface FavoriteState {
-  favorites: any[];
-  addToFavorites: (item: any) => void;
+  favorites: ICorses[];
+  addToFavorites: (item: ICorses) => void;
   removeFromFavorites: (id: number) => void;
 }
 

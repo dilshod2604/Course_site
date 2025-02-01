@@ -3,7 +3,7 @@ import image2 from "../assets/access_course/product2.png";
 import image3 from "../assets/access_course/fixed.png";
 import { StaticImageData } from "next/image";
 
-interface ICorses {
+ export interface ICorses {
   id: number; // Add unique id for each course if needed. For this example, I've kept it as number.
   title: string;
   description: string;

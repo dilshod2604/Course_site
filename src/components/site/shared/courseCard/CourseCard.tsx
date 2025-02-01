@@ -5,7 +5,7 @@ import lesson from "../../../../assets/access_course/lesson.svg";
 import progress from "../../../../assets/access_course/progress.svg";
 import { MdArrowForwardIos } from "react-icons/md";
 import Link from "next/link";
-import { courses } from "@/src/constants/couse";
+import { courses, ICorses } from "@/src/constants/couse";
 import { IoIosHeartEmpty } from "react-icons/io";
 
 interface CourseCardProps {
@@ -18,13 +18,10 @@ interface CourseCardProps {
     lessons: string;
     lll: string;
   };
-  handleAddToFavorites: (course: any) => void;
+  handleAddToFavorites: (course: ICorses) => void;
 }
 
-const CourseCard: React.FC<CourseCardProps> = ({
-  course,
-  handleAddToFavorites,
-}) => {
+const CourseCard: React.FC<CourseCardProps> = ({ handleAddToFavorites }) => {
   return (
     <div className={scss.FreeCourses_block}>
       {courses.map((el, videoIndex) => (

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import scss from "./Navigation.module.scss";
-import { admin_side_bar_links, side_bar_links } from "@/src/constants/links";
+import { admin_side_bar_links } from "@/src/constants/links";
 import { usePathname } from "next/navigation";
 import { CiLogout } from "react-icons/ci";
 import Link from "next/link";
