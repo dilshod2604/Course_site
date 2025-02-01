@@ -27,51 +27,26 @@
       .block_images {
         display: flex;
         align-items: center;
-        justify-content: start;
-        gap: clamp(20px, 2.5vw, 40px);
-
+        justify-content: center;
+        gap: 40px;
 
         h3 {
           color: rgba(0, 0, 0, 0.5);
           font-family: Inter;
-          font-size: clamp(12px, 1vw, 16px);
+          font-size: 16px;
           font-weight: 400;
-          line-height: clamp(12.26px, 1.43vw, 23px);
+          line-height: 23px;
           letter-spacing: -0.6px;
           text-align: left;
         }
         h5 {
           color: rgb(0, 0, 0);
           font-family: Montserrat;
-          font-size: clamp(9.43px, 1.25vw, 20px);
+          font-size: 20px;
           font-weight: 400;
-          line-height: clamp(11.31px, 1.5vw, 24px);
+          line-height: 24px;
           letter-spacing: 0.1px;
           text-align: left;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 900px) {
-  .CourseLessons {
-    .welcome_context_lessons {
-      .text {
-        .lesson {
-        }
-      }
-      .blocks {
-        .block_images {
-          flex-wrap: wrap;
-          img {
-            width: 160.73px;
-            height: 90.13px;
-          }
-          h3 {
-            margin: 5px 0px;
-
-          }
         }
       }
     }
